@@ -1,0 +1,32 @@
+<!-- 2) Перепишите код, используя конструкцию switch-case,
+     запрашивая возраст пользователя через диалоговое окно. -->
+
+     <label for="year">Напитки которые можно употреблять в Вашем возрате: </label>
+     <select id="year">
+       <option value="">Выберите диапазон Вашего возраст</option>
+       <option value="breast milk">От 0 до 2 лет</option>
+       <option value="cows milk">От 3 лет до 18 лет</option>
+       <option value="kefir"> От 18 лет до 101 года </option> 
+       
+     </select>
+     
+     <p id="output"></p>
+     
+     <script>
+     let select = document.getElementById('year'), outputPar = document.getElementById('output') , result = "";
+     
+     select.addEventListener('change', drinks);
+     
+     function drinks() {
+       const choice = select.value;
+       switch (choice) {
+        case "": result = "не выбрана"; break;
+        case "breast milk": result = "Грудное молоко"; break;
+        case "cows milk": result = "Молоко коровье,козье и т.д"; break;
+        case "kefir": result = "Разрешается что то покрепче,например КЕФИР"; break;
+       }
+       outputPar .textContent = `  ${result}`;
+     }
+     </script>
+     
+         
